@@ -1,0 +1,14 @@
+name: minimalrtp
+version: '1.0-SNAPSHOT'
+main: org.whixard.minimalrtp.MinimalRTP
+api-version: '1.21'
+author: WhiXard
+website: "https://github.com/Bildcraft1"
+description: A simple random teleportation plugin for Minecraft.
+
+commands:
+  rtp:
+    description: Teleport to a random location.
+    usage: /<command>
+    permission: minimalrtp.command.rtp
+    permission-message: You do not have permission to use this command.

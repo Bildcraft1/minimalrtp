@@ -1,0 +1,21 @@
+# MinimalRTP Config
+# Author: WhiXard
+
+# Name of the world to teleport to
+world: "world"
+
+# Minimum and maximum coordinates for teleportation
+minDistance: 10000
+maxDistance: 20000
+
+# Maximum number of attempts to find a safe location
+maxRetries: 5
+
+# Cooldown time in seconds for the command
+cooldownSeconds: 60
+
+# Message section
+cooldownMessage: "<red>You must wait %time% seconds before using this command again."
+okMessage: "<gradient:#71E25F:#5FE2C5:#17BABA:#B81050>Teleporting...</gradient>"
+errorMessage: "<gradient:#17BABA:#17BABA>Teleportation </gradient><gradient:#17BABA:#B81050>failed!</gradient>"
+searchingMessage: "<yellow>Searching for a safe location..."
