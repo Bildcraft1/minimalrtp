@@ -1,4 +1,6 @@
-# MinimalRTP
+# MinimalRTP (DragonCraft Fork)
+
+> this version has a blacklist instead of just a single world.
 
 minimal async RTP plugin for Paper 1.21+
 
