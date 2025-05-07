@@ -31,7 +31,7 @@ public class RTP implements BasicCommand {
 
         // Check if player is already searching
         if (searching.getOrDefault(player.getUniqueId(), false)) {
-            player.sendMessage(MiniMessage.miniMessage().deserialize("<red>You are already searching for a random location. Please wait."));
+            player.sendMessage(MiniMessage.miniMessage().deserialize(MinimalRTP.instance.getConfig().getString("alreadySearchingMessage")));
             return;
         }
 
@@ -44,16 +44,12 @@ public class RTP implements BasicCommand {
             return;
         }
 
-        // Find a random location in the world
-        if (MinimalRTP.instance.getConfig().getString("world") == null) {
-            MinimalRTP.instance.getLogger().severe("World name is null, please check your config.yml");
-            return;
-        }
-
-        World world = Bukkit.getWorld(MinimalRTP.instance.getConfig().getString("world"));
-        if (world == null) {
-            MinimalRTP.instance.getLogger().severe("World not found: " + MinimalRTP.instance.getConfig().getString("world"));
-            player.sendMessage(MiniMessage.miniMessage().deserialize("<red>World not found. Please contact an administrator."));
+        // Get player's current world
+        World world = player.getWorld();
+        
+        // Check if world is blacklisted
+        if (MinimalRTP.instance.getConfig().getStringList("blacklistedWorlds").contains(world.getName())) {
+            player.sendMessage(MiniMessage.miniMessage().deserialize(MinimalRTP.instance.getConfig().getString("blacklistedWorldMessage")));
             return;
         }
 
