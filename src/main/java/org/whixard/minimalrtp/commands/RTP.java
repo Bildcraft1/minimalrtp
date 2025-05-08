@@ -172,7 +172,7 @@ public class RTP implements BasicCommand {
     /**
      * Get remaining cooldown time in seconds
      * @param player The player to check
-     * @return Remaining cooldown time in seconds
+     * @return Remaining cooldown time in seconds'Droid Sans Mono', 'monospace', monospace
      */
     private long getRemainingCooldown(Player player) {
         if (!cooldowns.containsKey(player.getUniqueId())) {
@@ -251,7 +251,8 @@ public class RTP implements BasicCommand {
         boolean notDangerous = !ground.isLiquid() &&
                 ground.getType() != Material.LAVA &&
                 ground.getType() != Material.MAGMA_BLOCK &&
-                ground.getType() != Material.CACTUS;
+                ground.getType() != Material.CACTUS &&
+                ground.getType() != Material.BEDROCK;
         return solidGround && safeSpace && notDangerous;
     }
 }
